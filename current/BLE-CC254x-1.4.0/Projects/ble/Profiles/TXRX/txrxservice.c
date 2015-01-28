@@ -199,7 +199,7 @@ static gattAttribute_t txrxAttrTbl[] =
   // Simple Profile Service
   { 
     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
-    GATT_PERMIT_READ,                         /* permissions */
+    GATT_PERMIT_ENCRYPT_READ,                         /* permissions */
     0,                                        /* handle */
     (uint8 *)&txrxService            /* pValue */
   },
@@ -207,7 +207,7 @@ static gattAttribute_t txrxAttrTbl[] =
     // Characteristic 2 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar2Props 
     },
@@ -215,7 +215,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 2
       { 
         { ATT_UUID_SIZE, txDataCharUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txDataChar 
       },
@@ -223,7 +223,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 2 configuration
       { 
         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
-        GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+        GATT_PERMIT_ENCRYPT_READ | GATT_PERMIT_ENCRYPT_WRITE , 
         0, 
         (uint8 *)txrxServiceChar2Config 
       },
@@ -231,7 +231,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 2 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar2UserDesp 
       },           
@@ -239,7 +239,7 @@ static gattAttribute_t txrxAttrTbl[] =
     // Characteristic 3 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar3Props 
     },
@@ -247,7 +247,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 3
       { 
         { ATT_UUID_SIZE, rxDataCharUUID },
-        GATT_PERMIT_WRITE, 
+        GATT_PERMIT_ENCRYPT_WRITE , 
         0, 
         rxDataChar 
       },
@@ -255,7 +255,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 3 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar3UserDesp 
       },
@@ -263,7 +263,7 @@ static gattAttribute_t txrxAttrTbl[] =
     // Characteristic 4 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar4Props 
     },
@@ -271,7 +271,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 4
       { 
         { ATT_UUID_SIZE, BaudrateCharUUID },
-        GATT_PERMIT_WRITE | GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_WRITE  | GATT_PERMIT_ENCRYPT_READ, 
         0, 
         &Baudrate 
       },
@@ -279,7 +279,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 4 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar4UserDesp 
       },
@@ -287,7 +287,7 @@ static gattAttribute_t txrxAttrTbl[] =
     // Characteristic 5 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar5Props 
     },
@@ -295,7 +295,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 5
       { 
         { ATT_UUID_SIZE, DevNameCharUUID },
-        GATT_PERMIT_WRITE | GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_WRITE  | GATT_PERMIT_ENCRYPT_READ, 
         0, 
         DevName 
       },
@@ -303,7 +303,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 5 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar5UserDesp 
       },
@@ -311,7 +311,7 @@ static gattAttribute_t txrxAttrTbl[] =
     // Characteristic 6 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar6Props 
     },
@@ -319,7 +319,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 6
       { 
         { ATT_UUID_SIZE, VersionCharUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         Version 
       },
@@ -327,7 +327,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 6 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar6UserDesp 
       },
@@ -335,7 +335,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 7 Declaration
     { 
       { ATT_BT_UUID_SIZE, characterUUID },
-      GATT_PERMIT_READ, 
+      GATT_PERMIT_ENCRYPT_READ, 
       0,
       &txrxServiceChar7Props 
     },
@@ -343,7 +343,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic Value 7
       { 
         { ATT_UUID_SIZE, TxPowerCharUUID },
-        GATT_PERMIT_WRITE | GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_WRITE  | GATT_PERMIT_ENCRYPT_READ, 
         0, 
         &TxPower 
       },
@@ -351,7 +351,7 @@ static gattAttribute_t txrxAttrTbl[] =
       // Characteristic 7 User Description
       { 
         { ATT_BT_UUID_SIZE, charUserDescUUID },
-        GATT_PERMIT_READ, 
+        GATT_PERMIT_ENCRYPT_READ, 
         0, 
         txrxServiceChar7UserDesp 
       },
